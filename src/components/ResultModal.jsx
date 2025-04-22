@@ -21,7 +21,7 @@ export default function ResultModal({
   });
 
   return (
-    <dialog ref={dialog} className="result-modal">
+    <dialog ref={dialog} className="result-modal" onClose={onReset}>
       {userLost && <h2>You lost</h2>}
       {!userLost && <h2>Your score: {score}</h2>}
       <p>
@@ -31,7 +31,7 @@ export default function ResultModal({
         You stoped the timer with{" "}
         <strong>{formattedRemainingTime} seconds left.</strong>
       </p>
-      <form method="dialog" onSubmit={onReset}>
+      <form method="dialog">
         <button>Close</button>
       </form>
     </dialog>
